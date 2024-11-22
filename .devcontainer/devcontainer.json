@@ -1,0 +1,54 @@
+{
+  "name": "MinInterior",
+  "dockerComposeFile": ["../devenv.docker-compose.yml"],
+  "service": "devenv",
+  "workspaceFolder": "/workspace/MinInteriorCONFIG",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "Atishay-Jain.All-Autocomplete",
+        "eamodio.gitlens",
+        "EditorConfig.EditorConfig",
+        "pucelle.vscode-css-navigation",
+        "streetsidesoftware.code-spell-checker",
+        "streetsidesoftware.code-spell-checker-spanish",
+        "wmaurer.change-case",
+        "Zignd.html-css-class-completion",
+        "ryu1kn.partial-diff",
+        "Gruntfuggly.todo-tree",
+        "TabNine.tabnine-vscode",
+        "formulahendry.auto-close-tag",
+        "formulahendry.auto-rename-tag",
+        "nicoespeon.abracadabra",
+        "dbaeumer.vscode-eslint",
+        "GitHub.vscode-pull-request-github",
+        "yatki.vscode-surround",
+        "esbenp.prettier-vscode",
+        "VisualStudioExptTeam.vscodeintellicode",
+        "VisualStudioExptTeam.vscodeintellicode-completions",
+        "Angular.ng-template",
+        "infinity1207.angular2-switcher",
+        "segerdekort.angular-cli",
+        "obenjiro.arrr",
+        "christian-kohler.path-intellisense",
+        "johnpapa.Angular2"
+      ],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "fish",
+        "remote.autoForwardPorts": false,
+        "remote.forwardOnOpen": false
+      }
+    }
+  },
+  "postCreateCommand": [
+    "sh",
+    "/workspace/MinInteriorCONFIG/.devcontainer/onCreated.sh"
+  ],
+  "postAttachCommand": [
+    "sh",
+    "/workspace/MinInteriorCONFIG/.devcontainer/onStart.sh"
+  ],
+  "otherPortsAttributes": {
+    "onAutoForward": "ignore"
+  }
+}

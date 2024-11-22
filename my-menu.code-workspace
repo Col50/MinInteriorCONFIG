@@ -1,0 +1,17 @@
+{
+  "folders": [
+    {
+      "name": "Configuraciones",
+      "path": "."
+    },
+    {
+      "name": "Backend",
+      "path": "../MinInteriorBACK"
+    },
+    {
+      "name": "Frontend",
+      "path": "../MinInteriorFRONT"
+    }
+  ],
+  "settings": {}
+}

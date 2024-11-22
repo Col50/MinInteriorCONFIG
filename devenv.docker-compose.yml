@@ -1,0 +1,28 @@
+version: '3.8'
+
+name: MinInterior
+services:
+  devenv:
+    build:
+      dockerfile: .devcontainer/Dockerfile
+      context: .
+    volumes:
+      - workspace:/workspace
+      - .:/workspace/MinInteriorCONFIG:cached
+      - ~/.ssh:/root/.ssh
+      - ./etc/nginx/nginx.dev.conf:/etc/nginx/http.d/default.conf
+      - database:/var/lib/mysql
+    ports:
+      - ${HTTP_PORT}:80
+      - 3306:3306
+      - 4200:4200
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    tty: true
+
+volumes:
+  database:
+  workspace:
